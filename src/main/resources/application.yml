@@ -6,7 +6,7 @@ spring:
     name: component-user
   jpa:
     hibenate:
-      ddl-auto: validate
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
@@ -22,3 +22,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9761/eureka/
+
+lombok:
+  equalsAndHashCode:
+    callSuper: call

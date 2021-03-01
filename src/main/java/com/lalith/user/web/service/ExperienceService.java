@@ -1,4 +1,4 @@
-package com.lalith.user.service;
+package com.lalith.user.web.service;
 
 public interface ExperienceService
 {

@@ -1,5 +1,6 @@
-package com.lalith.user.model;
+package com.lalith.user.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -15,18 +16,26 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity(name = "EXPERIENCE")
-public class Experience
+@EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Experience extends BaseEntity
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ORGANIZATION_ID", referencedColumnName = "ORGANIZATION_ID")
-    private Organization organization;
+    @Column(name = "ORG_NAME")
+    private String organization;
 
     @Column(name = "EXP_YEARS")
     private Double years;
@@ -41,6 +50,9 @@ public class Experience
 
     @Column(name = "IS_CURRENT_EMPLOYER")
     private Boolean isCurrentEmployer;
+
+    @Column(name = "END_DATE")
+    private LocalDate endDate;
 
     @ManyToOne
     @JoinColumn(name = "USER_NAME", nullable = false)

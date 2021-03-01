@@ -1,9 +1,9 @@
-package com.lalith.user.model;
+package com.lalith.user.domain;
 
 public enum AddressType
 {
 
-    PERMANENT("Permenant"),
+    PERMANENT("Permanent"),
     PRESENT("Present"),
     OFFICE("Office");
 

@@ -1,12 +1,17 @@
-package com.manh.cp.user.DTO;
+package com.lalith.user.web.model;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-import com.lalith.user.model.BaseEntity;
-import com.lalith.user.model.UserType;
+import com.lalith.user.domain.BaseEntity;
+import com.lalith.user.domain.UserType;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class UserDTO extends BaseEntity
 {
     private UUID userId;
@@ -29,7 +34,7 @@ public class UserDTO extends BaseEntity
 
     private Long daysOfNotice;
 
-    private List<AddressDTO> addressDTOS;
+    private AddressDTO address;
 
     private UserType userType;
 

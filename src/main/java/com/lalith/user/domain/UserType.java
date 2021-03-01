@@ -1,4 +1,4 @@
-package com.lalith.user.model;
+package com.lalith.user.domain;
 
 public enum UserType
 {
